@@ -1,0 +1,10 @@
+name: Saludo automatico
+
+on: push
+
+jobs:
+  saludar:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Decir hola
+        run: echo "Hola Roa! Tu codigo se subio correctamente"
