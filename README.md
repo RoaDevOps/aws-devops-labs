@@ -15,7 +15,7 @@ Documentar ejercicios y pequeños scripts mientras aprendo: auditoría básica d
 - **DynamoDB** — base de datos NoSQL serverless
 - **S3** — almacenamiento de objetos, VPC Gateway Endpoints
 - **VPC** — networking, endpoints, control de tráfico privado
-- **Linux/Bash** — administración de sistemas, scripting, permisos
+- **Linux/Bash** — administración de sistemas, scripting, permisos, cron
 
 ## 📂 Scripts
 
@@ -43,6 +43,11 @@ chmod +x scripts/disk-check.sh
 
 **Por qué existe:** al revisar mi propia máquina encontré una carpeta de recuperación de archivos olvidada que ocupaba 9 GB. Este script automatiza esa revisión para detectarlo antes de que el disco se llene de verdad.
 
+**Automatización con cron:** programado para correr automáticamente todos los días a las 9:00 AM:
+```bash
+0 9 * * * /ruta/completa/disk-check.sh >> /ruta/completa/disk-check.log 2>&1
+```
+
 ## 📌 Conceptos que he ido practicando
 
 - IAM Role + Instance Profile como alternativa a guardar credenciales en una instancia EC2.
@@ -51,6 +56,8 @@ chmod +x scripts/disk-check.sh
 - Revisar y limpiar recursos que ya no se usan, para no generar costos de más (tanto en AWS como en Linux).
 - Permisos de archivos en Linux (`chmod`, lectura/escritura/ejecución).
 - Diagnóstico básico de sistema: uso de RAM vs. disco, qué carpeta ocupa más espacio.
+- Procesos y servicios: diferencia entre matar un proceso (`kill`) y controlar un servicio (`systemctl`).
+- Automatización de tareas con `cron`.
 
 ## 👤 Autor
 
